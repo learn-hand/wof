@@ -5,8 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"code.google.com/p/go-uuid/uuid"
-	mapservice "github.com/cloudnativego/wof-mapservice/service"
+	mapservice "wof/wof-mapservice/service"
+
+	"github.com/google/uuid"
 )
 
 const (
@@ -16,8 +17,8 @@ const (
 var (
 	player1 PlayerState
 	player2 PlayerState
-	id1     = uuid.New()
-	id2     = uuid.New()
+	id1     = uuid.New().String()
+	id2     = uuid.New().String()
 )
 
 func TestLegitMoveModifiesState(t *testing.T) {
@@ -46,7 +47,7 @@ func TestMissingPlayerMoveShouldBeRejected(t *testing.T) {
 	initialState := generateEmptyState(10, author)
 	moveEvent := &PlayerMovedEvent{
 		GameID:       initialState.GameID,
-		PlayerID:     uuid.New(),                          // bogus player
+		PlayerID:     uuid.New().String(),                          // bogus player
 		TargetTileID: initialState.GameMap.Tiles[0][1].ID, // move down
 		Timestamp:    time.Now().Unix(),
 	}
@@ -80,7 +81,7 @@ func TestInvalidMoveRejectsWithError(t *testing.T) {
 	moveEvent := &PlayerMovedEvent{
 		GameID:       initialState.GameID,
 		PlayerID:     id1,
-		TargetTileID: uuid.New(), // move into the nether regions
+		TargetTileID: uuid.New().String(), // move into the nether regions
 		Timestamp:    time.Now().Unix(),
 	}
 
@@ -99,15 +100,15 @@ func TestWrongRealityEventsAreRejectedWithError(t *testing.T) {
 	initialState := generateEmptyState(10, author)
 
 	movedEvent := &PlayerMovedEvent{
-		GameID:       uuid.New(),
+		GameID:       uuid.New().String(),
 		PlayerID:     id1,
 		TargetTileID: initialState.GameMap.Tiles[0][1].ID, // valid move
 		Timestamp:    time.Now().Unix(),
 	}
 
 	joinedEvent := &PlayerJoinedEvent{
-		GameID:    uuid.New(), // bad reality/ wrong game
-		PlayerID:  uuid.New(),
+		GameID:    uuid.New().String(), // bad reality/ wrong game
+		PlayerID:  uuid.New().String(),
 		Name:      "Devontay",
 		Sprite:    "knight-64",
 		Timestamp: time.Now().Unix(),
@@ -127,7 +128,7 @@ func TestPlayerJoinedEventUpdatesReality(t *testing.T) {
 	initialState := generateEmptyState(10, author)
 	joinEvent := &PlayerJoinedEvent{
 		GameID:    initialState.GameID,
-		PlayerID:  uuid.New(),
+		PlayerID:  uuid.New().String(),
 		Name:      "Devontay",
 		Sprite:    "knight-64",
 		Timestamp: time.Now().Unix(),
@@ -159,7 +160,7 @@ func TestPlayerJoinedEventUpdatesReality(t *testing.T) {
 func generateEmptyState(mapSize int, author string) (state *GameState) {
 	gmap := generateTestMap(mapSize, author)
 	state = &GameState{
-		GameID:  uuid.New(),
+		GameID:  uuid.New().String(),
 		GameMap: gmap,
 		Players: generateDefaultPlayers(gmap.Tiles[0][0].ID),
 	}
@@ -189,7 +190,7 @@ func generateTestMap(size int, author string) (gameMap mapservice.WofMap) {
 
 	gameMap.Metadata.Author = author
 	gameMap.Metadata.Description = "Auto-generated Test Map"
-	gameMap.ID = uuid.New()
+	gameMap.ID = uuid.New().String()
 
 	tiles := make([][]mapservice.MapTile, size)
 	for row := 0; row < size; row++ {
@@ -211,6 +212,6 @@ func makeTile() (tile mapservice.MapTile) {
 	tile.Traversable = true
 	tile.Sprite = ""
 	tile.TileName = "test-tile"
-	tile.ID = uuid.New()
+	tile.ID = uuid.New().String()
 	return
 }

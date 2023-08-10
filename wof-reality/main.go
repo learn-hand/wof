@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"os"
 
+	"wof/wof-reality/service"
+
 	"github.com/cloudfoundry-community/go-cfenv"
-	"github.com/cloudnativego/wof-reality/service"
 )
 
 func main() {

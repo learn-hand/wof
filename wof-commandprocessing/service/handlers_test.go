@@ -7,7 +7,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/cloudnativego/wof-eventprocessing/events"
+	"wof/wof-eventprocessing/events"
+
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"

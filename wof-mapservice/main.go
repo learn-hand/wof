@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/cloudnativego/wof-mapservice/service"
+	"wof/wof-mapservice/service"
 )
 
 func main() {

@@ -9,8 +9,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	. "wof/wof-reality/service"
+
 	"github.com/cloudfoundry-community/go-cfenv"
-	. "github.com/cloudnativego/wof-reality/service"
 )
 
 var (

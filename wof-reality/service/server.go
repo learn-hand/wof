@@ -3,9 +3,10 @@ package service
 import (
 	"fmt"
 
-	"github.com/cloudfoundry-community/go-cfenv"
-	"github.com/cloudnativego/cf-tools"
 	"github.com/cloudnativego/cfmgo"
+
+	"github.com/cloudfoundry-community/go-cfenv"
+	cftools "github.com/cloudnativego/cf-tools"
 	"github.com/codegangsta/negroni"
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"

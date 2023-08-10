@@ -3,7 +3,7 @@ package events
 import (
 	"fmt"
 
-	mapservice "github.com/cloudnativego/wof-mapservice/service"
+	mapservice "wof/wof-mapservice/service"
 )
 
 // ProcessMovedEvent processes a received moved event, reflecting the change in state.

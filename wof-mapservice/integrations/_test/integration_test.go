@@ -8,9 +8,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"code.google.com/p/go-uuid/uuid"
+	"github.com/google/uuid"
 
-	. "github.com/cloudnativego/wof-mapservice/service"
+	. "wof/wof-mapservice/service"
 )
 
 var (
@@ -133,7 +133,7 @@ func generateTestMap(size int, author string) (gameMap WofMap) {
 
 	gameMap.Metadata.Author = author
 	gameMap.Metadata.Description = "Auto-generated Test Map"
-	gameMap.ID = uuid.New()
+	gameMap.ID = uuid.New().String()
 
 	tiles := make([][]MapTile, size)
 	for row := 0; row < size; row++ {
@@ -154,6 +154,6 @@ func makeTile() (tile MapTile) {
 	tile.AllowUp = true
 	tile.Sprite = ""
 	tile.TileName = "test-tile"
-	tile.ID = uuid.New()
+	tile.ID = uuid.New().String()
 	return
 }

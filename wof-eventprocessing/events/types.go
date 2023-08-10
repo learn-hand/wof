@@ -1,7 +1,7 @@
 package events
 
 import (
-	mapservice "github.com/cloudnativego/wof-mapservice/service"
+	mapservice "wof/wof-mapservice/service"
 )
 
 // PlayerMovedEvent represents a player move.

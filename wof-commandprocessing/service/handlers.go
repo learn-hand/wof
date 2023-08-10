@@ -6,7 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/cloudnativego/wof-eventprocessing/events"
+	"wof/wof-eventprocessing/events"
+
 	"github.com/gorilla/mux"
 	"github.com/unrolled/render"
 )

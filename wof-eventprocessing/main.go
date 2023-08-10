@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/cloudnativego/wof-eventprocessing/service"
+	"wof/wof-eventprocessing/service"
 )
 
 func main() {

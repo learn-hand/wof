@@ -4,7 +4,7 @@
   "description": "World of Fluxcraft UI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cloudnativego/wof-ui.git"
+    "url": "https://wof/wof-ui.git"
   },
   "main": "index.js",
   "scripts": {

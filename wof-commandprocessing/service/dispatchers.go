@@ -6,7 +6,7 @@ import (
 	"log"
 
 	"github.com/cloudfoundry-community/go-cfenv"
-	"github.com/cloudnativego/cf-tools"
+	cftools "github.com/cloudnativego/cf-tools"
 	"github.com/streadway/amqp"
 )
 

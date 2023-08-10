@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/cloudnativego/wof-commandprocessing/service"
+	"wof/wof-commandprocessing/service"
 )
 
 func main() {

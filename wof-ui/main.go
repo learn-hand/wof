@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	"github.com/pivotalservices/usage-nozzle-ui/server"
+	"wof/wof-ui/server"
 )
 
 func main() {
