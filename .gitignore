@@ -1,0 +1,38 @@
+# Compiled Object files, Static and Dynamic libs (Shared Objects)
+*.o
+*.a
+*.so
+
+# Folders
+_obj
+
+# Architecture specific extensions/prefixes
+*.[568vq]
+[568vq].out
+
+*.cgo1.go
+*.cgo2.c
+_cgo_defun.c
+_cgo_gotypes.go
+_cgo_export.*
+
+_testmain.go
+
+*.exe
+*.test
+*.prof
+
+/coverage.out
+/wof-eventprocessing
+
+
+node_modules/
+*-compiled.js
+*-compiled.js.map
+npm-debug.log
+
+usage-nozzle-ui
+/assets/bundle.js
+/assets/sprites/objects_tileset_128.png
+/assets/tiles/dungeon_tileset_128.png
+/bq-ui
